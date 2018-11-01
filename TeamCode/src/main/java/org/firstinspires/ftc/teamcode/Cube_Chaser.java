@@ -12,8 +12,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous
 public class Cube_Chaser extends OpMode {
-    private DcMotor mtr_left;
-    private DcMotor mtr_right;
+   private DcMotor mtr_left;
+   private DcMotor mtr_right;
     private GoldAlignDetector gold;
 
     @Override
@@ -21,7 +21,7 @@ public class Cube_Chaser extends OpMode {
         mtr_left = hardwareMap.get(DcMotor.class, "mtr_left");
         mtr_right = hardwareMap.get(DcMotor.class, "mtr_right");
 
-        mtr_left.setDirection(DcMotorSimple.Direction.FORWARD);
+       mtr_left.setDirection(DcMotorSimple.Direction.FORWARD);
         mtr_right.setDirection(DcMotorSimple.Direction.REVERSE);
 
         gold = new GoldAlignDetector();
@@ -49,17 +49,17 @@ public class Cube_Chaser extends OpMode {
 
     @Override
     public void loop() {
-        if(gold.getXPosition() > gold.alignSize){
+        if(gold.getXPosition() < 110){
             mtr_right.setPower(0.75);
             mtr_left.setPower(0.65);
         }
-        else if(gold.getXPosition() < gold.alignSize){
-            mtr_right.setPower(0.65);
-            mtr_left.setPower(0.75);
+       else if(gold.getXPosition() > 317){
+           mtr_right.setPower(0.65);
+         mtr_left.setPower(0.75);
         }
         else{
             mtr_right.setPower(0.7);
-            mtr_left.setPower(0.7);
+           mtr_left.setPower(0.7);
         }
 
     }
