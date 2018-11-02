@@ -24,7 +24,7 @@ public class Open_House_Tele extends LinearOpMode {
         srv_left = hardwareMap.get(Servo.class, "srv_left");
         srv_right = hardwareMap.get(Servo.class, "srv_right");
 
-        mtr_left.setDirection(DcMotorSimple.Direction.FORWARD);
+        //mtr_left.setDirection(DcMotorSimple.Direction.FORWARD);
         mtr_right.setDirection(DcMotorSimple.Direction.REVERSE);
 
         while(true){
