@@ -17,6 +17,7 @@ public class Open_House_Tele extends LinearOpMode {
     private Servo srv_right;
 
     @Override
+
     public void runOpMode() {
         mtr_left = hardwareMap.get(DcMotor.class, "mtr_left");
         mtr_right = hardwareMap.get(DcMotor.class, "mtr_right");
@@ -26,8 +27,8 @@ public class Open_House_Tele extends LinearOpMode {
 
         //mtr_left.setDirection(DcMotorSimple.Direction.FORWARD);
         mtr_right.setDirection(DcMotorSimple.Direction.REVERSE);
-
-        while(true){
+        waitForStart();
+        while(opModeIsActive()){
             if(gamepad1.a){
                 //Close Servos
                 //TODO: FIX THIS SECTION IT PROBABLY DOESN'T WORK
@@ -47,8 +48,11 @@ public class Open_House_Tele extends LinearOpMode {
             else if(gamepad1.dpad_down){
                 extend.setPower(-1);
             }
+            else if(!gamepad1.dpad_down && !gamepad1.dpad_up){
+                extend.setPower(0);
+            }
             mtr_right.setPower(gamepad1.right_stick_y);
-            mtr_left.setPower(gamepad1.left_stick_x);
+            mtr_left.setPower(gamepad1.left_stick_y);
         }
     }
 }
