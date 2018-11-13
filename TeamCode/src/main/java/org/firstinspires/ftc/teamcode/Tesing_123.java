@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
     @Autonomous
     public class Tesing_123 extends LinearOpMode {
         @Override
-        
+
         public void runOpMode() {
 
         }
