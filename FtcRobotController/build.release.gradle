@@ -6,4 +6,12 @@ dependencies {
     compile (name:'FtcCommon-release', ext: 'aar')
     compile (name:'WirelessP2p-release', ext:'aar')
 
+
+    implementation (name:'Inspection-release', ext: 'aar')
+    implementation (name:'Blocks-release', ext: 'aar')
+    implementation (name:'RobotCore-release', ext: 'aar')
+    implementation (name:'Hardware-release', ext: 'aar')
+    implementation (name:'FtcCommon-release', ext: 'aar')
+    implementation (name:'WirelessP2p-release', ext:'aar')
+    //1df279274ca16aa67ec2b502bafe6eeab3bede7a
 }
